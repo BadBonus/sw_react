@@ -7,6 +7,7 @@ import PersonDetails from '../person-details';
 import ErrorIndicator from './../error-indicator/error-indicator';
 
 import './app.css';
+import PeoplePage from "../people-page/people-page";
 
 export default class App extends React.Component{
 
@@ -21,11 +22,7 @@ export default class App extends React.Component{
 
     };
 
-    onPersonSelected = (id) => {
-        this.setState({
-           selected:id
-        });
-    };
+
 
     componentDidCatch(){
         console.log('componentDidCatch');
@@ -50,17 +47,7 @@ export default class App extends React.Component{
                     Change Planet
                 </button>
 
-                <div className="row mb2">
-                    <div className="col-md-6">
-                        <ItemList
-                            onItemSelected={this.onPersonSelected}
-                        />
-                    </div>
-                    <div className="col-md-6">
-                        <PersonDetails personId={this.state.selected}/>
-                    </div>
-                </div>
-
+                <PeoplePage/>
             </div>
         );
     }
