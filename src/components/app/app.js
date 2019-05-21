@@ -8,8 +8,11 @@ import ErrorIndicator from './../error-indicator/error-indicator';
 
 import './app.css';
 import PeoplePage from "../people-page/people-page";
+import SwapiService from "../../services/swapi-service";
 
 export default class App extends React.Component{
+
+    swapiService = new SwapiService();
 
     state =
         {
@@ -48,7 +51,36 @@ export default class App extends React.Component{
                 </button>
 
                 <PeoplePage/>
+
+
             </div>
+
+
         );
     }
 }
+// <div className="row mb-2">
+//     <div className="col-md-6">
+//         <ItemList
+//             onItemSelected={this.onPersonSelected}
+//             getData={this.swapiService.getAllPlanets}
+//             renderItem={(item)=> item.name}
+//         />
+//     </div>
+//     <div className="col-md-6">
+//         <PersonDetails personId={this.state.selected}/>
+//     </div>
+// </div>
+//
+// <div className="row mb-2">
+//     <div className="col-md-6">
+//     <ItemList
+// onItemSelected={this.onPersonSelected}
+// getData={this.swapiService.getAllStarships}
+// renderItem={(item)=> item.name}
+// />
+// </div>
+// <div className="col-md-6">
+//     <PersonDetails personId={this.state.selected}/>
+//     </div>
+// </div>
